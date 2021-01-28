@@ -104,6 +104,7 @@
         </div>
         <div class="row result-wrap" style=" margin-top: 0;">
             <p>Chúc mừng năm mới</p>
+            <span></span>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -276,7 +277,8 @@
                     $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's not a win.")
                 }
                 var EmployeeWin = infor.find(m => m.ID == idWin)
-                $('.result-wrap p').html(EmployeeWin.Name + " " + EmployeeWin.Position);
+                $('.result-wrap p').html(EmployeeWin.Name);
+                $('.result-wrap span').html(EmployeeWin.Position);
                 $('.row.result-wrap').addClass('win');
                 const indexWin = listID.indexOf(EmployeeWin.ID);
                 if (indexWin > -1) {
