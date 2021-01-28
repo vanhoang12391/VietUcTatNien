@@ -594,6 +594,9 @@
         }
         var timer1 = null, timer2 = null;
         function slot() {
+            if (!$('.pyro').hasClass('hidden')) {
+                $('.pyro').addClass('hidden');
+            }
             $('.row.result-wrap').removeClass('win');
             clearInterval(timer1); clearTimeout(timer2);
             var audio = new Audio('http://vietucphumy.tk/mix-slot.mp3');
