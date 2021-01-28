@@ -252,7 +252,7 @@
                 $('.slot-2').html(i2);
                 $('.slot-3').html(i3);
                 $('.slot-4').html(i4);
-            }, 300);
+            }, 100);
             timer2 = setTimeout(function () {
                 var cookieValue = getCookie('LogInfo');
                 var arrInfo = JSON.parse(cookieValue);
@@ -277,7 +277,7 @@
                     listID.splice(indexWin, 1)
                 }
                 setCookie('LogInfo', JSON.stringify(listID), 10);
-            }, 5000);
+            }, 1000);
 
         }
         $('.btn-go').click(function () {
