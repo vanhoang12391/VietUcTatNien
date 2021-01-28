@@ -263,15 +263,6 @@
                 $($('.slot')[1]).html(num2);
                 $($('.slot')[2]).html(num3);
                 $($('.slot')[3]).html(num4);
-                if (slotOne == slotTwo && slotOne == slotThree) {
-                    $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's a win.");
-                    $('.row.result-wrap').addClass('win');
-                    return;
-                }
-                if (slotOne != 'undefined' && slotTwo != 'undefined' && slotThree != 'undefined') {
-                    $('.row.result-wrap').removeClass('win');
-                    $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's not a win.")
-                }
                 var EmployeeWin = infor.find(m => m.ID == idWin)
                 $('.result-wrap p').html(EmployeeWin.Name);
                 $('.result-wrap span').html(EmployeeWin.Position);
