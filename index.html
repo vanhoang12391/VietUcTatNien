@@ -75,12 +75,12 @@
             float: left;
         }
 
-            .result-wrap p {
-                padding: 10px;
+            .result-wrap p, .result-wrap span {
                 text-align: center;
                 font-size: 35px;
                 text-transform: uppercase;
                 font-weight: bold;
+                display: block;
             }
 
         .row.win {
@@ -103,8 +103,8 @@
             <a href="javascript:" class="btn btn-default btn-block btn-go">Quay</a>
         </div>
         <div class="row result-wrap" style=" margin-top: 0;">
-            <p>Chúc mừng năm mới</p>
-            <span></span>
+            <p style=" margin-bottom: 10px;">Chúc mừng năm mới</p>
+            <span style="font-weight: normal;"></span>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -237,10 +237,6 @@
         }
         var timer1 = null, timer2 = null;
         function slot() {
-            var slotOne = Math.floor(Math.random() * 10);
-            var slotTwo = Math.floor(Math.random() * 10);
-            var slotThree = Math.floor(Math.random() * 10);
-            var slotFour = Math.floor(Math.random() * 10);
             clearInterval(timer1); clearTimeout(timer2);
             timer1 = setInterval(function () {
                 var i1 = Math.floor(Math.random() * 10);
