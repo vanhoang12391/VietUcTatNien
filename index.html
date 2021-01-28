@@ -1,0 +1,152 @@
+﻿<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CGame</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico" />
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <meta id="metaKeywords" name="keywords" content="" />
+    <meta id="metaDescription" name="description" content="CGame" />
+    <style>
+        .container {
+            background: #ff6060;
+            width: 500px;
+            margin-top: 100px;
+            border-radius: 6px;
+            padding: 15px;
+            color: #fff;
+            float: left;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .row {
+            margin: 0;
+            border-radius: 6px;
+            background: #222e6a;
+            border: 2px solid #fff;
+            float: left;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .slot {
+            width: 25%;
+            height: 120px;
+            border: 2px solid #2a8099;
+            margin: 15px 0;
+            font-size: 110px;
+            line-height: 120px;
+            float: left;
+            box-sizing: border-box;
+            text-align: center;
+            border-right: none;
+        }
+
+            .slot:last-child {
+                border-right: 2px solid #2a8099;
+            }
+
+        .btn-go, .btn-go:hover, .btn-go:focus {
+            font-size: 35px;
+            float: left;
+            text-decoration: none;
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            line-height: 40px;
+            color: #fff;
+            background: #147b93;
+            border-radius: 10px;
+            margin-left: 200px;
+            border: 3px solid #147b93;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .go-wrap, .result-wrap {
+            margin: 30px 0;
+            float: left;
+        }
+
+            .result-wrap p {
+                padding: 10px;
+                text-align: center;
+                font-size: 35px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+        .row.win {
+            background: #f00;
+            float: left;
+        }
+    </style>
+</head>
+
+<body style="padding:0; margin: 0;background: url(https://pms.vietuc.com/images/banner.jpg); background-size: cover;">
+    <div class="container">
+        <h1 style="text-align: center; width: 100%; text-transform:uppercase">Vòng quay may mắn</h1>
+        <div class="row text-center">
+            <div class="slot slot-1">0</div>
+            <div class="slot slot-2">0</div>
+            <div class="slot slot-3">0</div>
+            <div class="slot slot-4">0</div>
+        </div>
+        <div class="go-wrap">
+            <a href="javascript:" class="btn btn-default btn-block btn-go">Quay</a>
+        </div>
+        <div class="row result-wrap" style=" margin-top: 0;">
+            <p>Chúc mừng năm mới</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var timer1 = null, timer2 = null;
+        function slot() {
+            var slotOne = Math.floor(Math.random() * 10);
+            var slotTwo = Math.floor(Math.random() * 10);
+            var slotThree = Math.floor(Math.random() * 10);
+            var slotFour = Math.floor(Math.random() * 10);
+            clearInterval(timer1); clearTimeout(timer2);
+            timer1 = setInterval(function () {
+                var i1 = Math.floor(Math.random() * 10);
+                var i2 = Math.floor(Math.random() * 10);
+                var i3 = Math.floor(Math.random() * 10);
+                var i4 = Math.floor(Math.random() * 10);
+                $('.slot-1').html(i1);
+                $('.slot-2').html(i2);
+                $('.slot-3').html(i3);
+                $('.slot-4').html(i4);
+            }, 300);
+            timer2 = setTimeout(function () {
+                clearInterval(timer1);
+                $($('.slot')[0]).html(slotOne);
+                $($('.slot')[1]).html(slotTwo);
+                $($('.slot')[2]).html(slotThree);
+                $($('.slot')[3]).html(slotFour);
+                if (slotOne == slotTwo && slotOne == slotThree) {
+                    $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's a win.");
+                    $('.row.result-wrap').addClass('win');
+                    return;
+                }
+                if (slotOne != 'undefined' && slotTwo != 'undefined' && slotThree != 'undefined') {
+                    $('.row.result-wrap').removeClass('win');
+                    $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's not a win.")
+                }
+            }, 5000);
+
+        }
+        $('.btn-go').click(function () {
+            slot();
+        });
+    </script>
+</body>
+</html>
