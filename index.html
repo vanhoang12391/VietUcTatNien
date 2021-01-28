@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Việt Úc Phù Mỹ|Tất niên 2020</title>
+    <title>Việt Úc Phù Mỹ | Tất niên 2020</title>
     <meta name="viewport" content="initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="yes" />
@@ -280,7 +280,7 @@
                 $('.row.result-wrap').addClass('win');
                 const indexWin = listID.indexOf(EmployeeWin.ID);
                 if (indexWin > -1) {
-                    listID.splice(4, 1)
+                    listID.splice(indexWin, 1)
                 }
                 setCookie('LogInfo', JSON.stringify(listID), 10);
             }, 5000);
