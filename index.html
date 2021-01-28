@@ -228,7 +228,7 @@
         ];
         var listID = '';
         $(infor).each(function (index, item) {
-            listID += item.ID + ",";
+            listID.push(item.ID);
         })
 
         var LogInfo = getCookie('LogInfo');
