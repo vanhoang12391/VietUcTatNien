@@ -1,4 +1,4 @@
-﻿<!DOCTYPE>
+<!DOCTYPE>
 <html lang="en">
 
 <head>
@@ -109,6 +109,128 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        var infor = [
+            { "ID": "3036", "Name": "Nguyễn Văn Thảo", "Position": "Điều hành" },
+            { "ID": "3037", "Name": "Huỳnh Thị Bích Việt", "Position": "Nhân sự" },
+            { "ID": "3038", "Name": "Trần Thị Hậu", "Position": "Purchasing (Mua hàng)" },
+            { "ID": "3040", "Name": "Võ Văn Vỹ", "Position": "Hệ thống" },
+            { "ID": "4393", "Name": "Huỳnh Văn Hoàng", "Position": "Phát triển phần mềm" },
+            { "ID": "3041", "Name": "Huỳnh Thị Vân Kiều", "Position": "Lễ tân & Hành chính" },
+            { "ID": "3982", "Name": "Phan Thị Kim Nương", "Position": "QLDN - TTP" },
+            { "ID": "3045", "Name": "Nguyễn Hoàng Giang", "Position": "Bán hàng" },
+            { "ID": "3178", "Name": "Nguyễn Nhật Tân", "Position": "Kế toán tài chính" },
+            { "ID": "3043", "Name": "Nguyễn Thị Kim Hương", "Position": "Kế toán tài chính" },
+            { "ID": "3047", "Name": "Ngô Thanh Lợi", "Position": "Kế toán tài chính" },
+            { "ID": "4071", "Name": "Ngô Thanh Hải", "Position": "Kế toán tài chính" },
+            { "ID": "3981", "Name": "Lê Thị Thanh Hoa", "Position": "Kế toán tài chính" },
+            { "ID": "4072", "Name": "Võ Tiến Thông", "Position": "Kế toán tài chính" },
+            { "ID": "4073", "Name": "Nguyễn Hữu Triều", "Position": "Kế toán tài chính" },
+            { "ID": "3714", "Name": "Nguyễn Thanh Diệt", "Position": "Tài xế" },
+            { "ID": "3080", "Name": "Trần Văn Sơn", "Position": "Bảo vệ" },
+            { "ID": "3025", "Name": "Trương Thanh Hải", "Position": "Bảo vệ" },
+            { "ID": "3032", "Name": "Phạm Tân", "Position": "Bảo vệ" },
+            { "ID": "3033", "Name": "Đỗ Văn Tùng", "Position": "Bảo vệ" },
+            { "ID": "3034", "Name": "Nguyễn Thanh Trực", "Position": "Bảo vệ" },
+            { "ID": "3035", "Name": "Dương Xuân Duy", "Position": "Bảo vệ" },
+            { "ID": "3026", "Name": "Nguyễn Lành", "Position": "Bảo vệ" },
+            { "ID": "3027", "Name": "Trần Trung Hòa", "Position": "Bảo vệ" },
+            { "ID": "3545", "Name": "Trần Quang Khoa", "Position": "Bảo vệ" },
+            { "ID": "3712", "Name": "Nguyễn Văn Khanh", "Position": "Bảo vệ" },
+            { "ID": "3713", "Name": "Thái Bình Dưỡng", "Position": "Bảo vệ" },
+            { "ID": "3028", "Name": "Phạm Thị Loan", "Position": "Cấp Dưỡng" },
+            { "ID": "3024", "Name": "Trần Thị Thúy Hằng", "Position": "Cấp Dưỡng" },
+            { "ID": "3029", "Name": "Nguyễn Thị Thảo Trang", "Position": "Cấp Dưỡng" },
+            { "ID": "4074", "Name": "Phan Thị Hân", "Position": "Cấp Dưỡng" },
+            { "ID": "3030", "Name": "Trần Thị Dung", "Position": "Tạp vụ" },
+            { "ID": "4354", "Name": "Trần Thị Ngọc Kiều", "Position": "Tạp vụ" },
+            { "ID": "3049", "Name": "Nguyễn Hữu Học", "Position": "Giám sát xây dựng" },
+            { "ID": "3051", "Name": "Lương Chí Cường", "Position": "Giám sát xây dựng" },
+            { "ID": "3031", "Name": "Lê Quang Thế", "Position": "Bảo trì" },
+            { "ID": "3052", "Name": "Trần Đình Sơn", "Position": "Cơ điện nước" },
+            { "ID": "3053", "Name": "Đặng Thành Thắng", "Position": "Cơ điện nước" },
+            { "ID": "3054", "Name": "Trương Công Minh", "Position": "Cơ điện nước" },
+            { "ID": "3055", "Name": "Trần Thanh Phụng", "Position": "Cơ điện nước" },
+            { "ID": "3056", "Name": "Đặng Văn Chu", "Position": "Cơ điện nước" },
+            { "ID": "3057", "Name": "Võ Đức Toàn", "Position": "Cơ điện nước" },
+            { "ID": "3547", "Name": "Lê Thị Quyên", "Position": "Quản lý chất lượng" },
+            { "ID": "3548", "Name": "Liễu Như Ý", "Position": "Quản lý chất lượng" },
+            { "ID": "4075", "Name": "Đặng Thị Ly", "Position": "Quản lý chất lượng" },
+            { "ID": "4076", "Name": "Lê Văn Tiên", "Position": "Quản lý chất lượng" },
+            { "ID": "4077", "Name": "Huỳnh Thị Mỹ Huyền", "Position": "Quản lý chất lượng" },
+            { "ID": "4339", "Name": "Võ Thị Nhớ", "Position": "Quản lý chất lượng" },
+            { "ID": "4340", "Name": "Nguyễn Thị Hải Yến", "Position": "Quản lý chất lượng" },
+            { "ID": "3563", "Name": "Hoàng Đình Hiếu", "Position": "Bảo trì thiết bị công nghệ" },
+            { "ID": "3072", "Name": "Nguyễn Anh Tường", "Position": "Sản xuất" },
+            { "ID": "3710", "Name": "Ngô Đình Quốc Dũng", "Position": "Sản xuất" },
+            { "ID": "4113", "Name": "Bùi Văn Đồng Tâm", "Position": "Sản xuất" },
+            { "ID": "4116", "Name": "Nguyễn Văn Trường", "Position": "Sản xuất" },
+            { "ID": "4125", "Name": "Hà Văn Trảy", "Position": "Sản xuất" },
+            { "ID": "3065", "Name": "Nguyễn Văn Phú", "Position": "Nghiên cứu phát triển" },
+            { "ID": "3572", "Name": "Trần Văn Tuấn", "Position": "Nghiên cứu phát triển" },
+            { "ID": "4095", "Name": "Nguyễn Hữu Thanh", "Position": "Nghiên cứu phát triển" },
+            { "ID": "4098", "Name": "Nguyễn Đình Thông", "Position": "Nghiên cứu phát triển" },
+            { "ID": "4131", "Name": "Nguyễn Văn Cường", "Position": "Sản xuất" },
+            { "ID": "2742", "Name": "Bùi Nhật Quang", "Position": "Sản xuất" },
+            { "ID": "3062", "Name": "Nguyễn Văn Trạng", "Position": "Sản xuất" },
+            { "ID": "3980", "Name": "Nguyễn Hoàng Xuân", "Position": "Sản xuất" },
+            { "ID": "3066", "Name": "Nguyễn Như Hổ", "Position": "Sản xuất" },
+            { "ID": "3060", "Name": "Nguyễn Hiên Thung", "Position": "Sản xuất" },
+            { "ID": "4103", "Name": "Phạm Văn Ni", "Position": "Sản xuất" },
+            { "ID": "3067", "Name": "Quảng Công Thạch", "Position": "Sản xuất" },
+            { "ID": "3068", "Name": "Ngô Vũ Luân", "Position": "Sản xuất" },
+            { "ID": "3069", "Name": "Dương Ngọc Toàn", "Position": "Sản xuất" },
+            { "ID": "3070", "Name": "Nguyễn Quốc Hưng", "Position": "Sản xuất" },
+            { "ID": "3071", "Name": "Trần Quang Nguyên", "Position": "Sản xuất" },
+            { "ID": "3073", "Name": "Thái Quang Đạt", "Position": "Sản xuất" },
+            { "ID": "3074", "Name": "Nhữ Văn Đạt", "Position": "Sản xuất" },
+            { "ID": "3075", "Name": "Phạm Minh Tuấn", "Position": "Sản xuất" },
+            { "ID": "3077", "Name": "Bùi Ân Điền", "Position": "Sản xuất" },
+            { "ID": "3551", "Name": "Bùi Thi", "Position": "Sản xuất" },
+            { "ID": "3558", "Name": "Nguyễn Thanh Tân", "Position": "Sản xuất" },
+            { "ID": "3559", "Name": "Phạm Văn Tứ", "Position": "Sản xuất" },
+            { "ID": "3560", "Name": "Đỗ Văn Láng", "Position": "Sản xuất" },
+            { "ID": "3561", "Name": "Trần Anh Tuấn", "Position": "Sản xuất" },
+            { "ID": "3562", "Name": "Lê Bảo Huy", "Position": "Sản xuất" },
+            { "ID": "3564", "Name": "Lê Tuấn Nam", "Position": "Sản xuất" },
+            { "ID": "3569", "Name": "Nhữ Thanh Bình", "Position": "Sản xuất" },
+            { "ID": "3570", "Name": "Đặng Mậu Đang", "Position": "Sản xuất" },
+            { "ID": "3571", "Name": "Ngô Văn Vương", "Position": "Sản xuất" },
+            { "ID": "3573", "Name": "Trương Hoàng Đệ", "Position": "Sản xuất" },
+            { "ID": "3574", "Name": "Tô Thanh Hoài", "Position": "Sản xuất" },
+            { "ID": "3576", "Name": "Nguyễn Chiến Hiệu", "Position": "Sản xuất" },
+            { "ID": "3578", "Name": "Lê Đức Hiệp", "Position": "Sản xuất" },
+            { "ID": "3666", "Name": "Phùng Minh Dự", "Position": "Sản xuất" },
+            { "ID": "3667", "Name": "Nguyễn Minh Tấn", "Position": "Sản xuất" },
+            { "ID": "3669", "Name": "Nguyễn Văn Dũng", "Position": "Sản xuất" },
+            { "ID": "3670", "Name": "Nguyễn Văn Trí", "Position": "Sản xuất" },
+            { "ID": "3703", "Name": "Bùi Sáng", "Position": "Sản xuất" },
+            { "ID": "4079", "Name": "Phạm Chí Linh", "Position": "Sản xuất" },
+            { "ID": "4083", "Name": "Văn Bá Quí", "Position": "Sản xuất" },
+            { "ID": "4087", "Name": "Kiều Quang Đại", "Position": "Sản xuất" },
+            { "ID": "4088", "Name": "Lê Văn Dược", "Position": "Sản xuất" },
+            { "ID": "4091", "Name": "Trần Ngọc Tài", "Position": "Sản xuất" },
+            { "ID": "4094", "Name": "Phùng Đông Sang", "Position": "Sản xuất" },
+            { "ID": "4097", "Name": "Hồ Xuân Tùng", "Position": "Sản xuất" },
+            { "ID": "4099", "Name": "Nguyễn Ngọc Ly", "Position": "Sản xuất" },
+            { "ID": "4100", "Name": "Nguyễn Thái Phương", "Position": "Sản xuất" },
+            { "ID": "4101", "Name": "Nguyễn Anh Pháp", "Position": "Sản xuất" },
+            { "ID": "4110", "Name": "Lê Công Dư", "Position": "Sản xuất" },
+            { "ID": "4114", "Name": "Trần Văn Thanh", "Position": "Sản xuất" },
+            { "ID": "4115", "Name": "Nguyễn Duy", "Position": "Sản xuất" },
+            { "ID": "4117", "Name": "Nguyễn Thanh Tuấn", "Position": "Sản xuất" },
+            { "ID": "4118", "Name": "Phạm Văn Thoàng", "Position": "Sản xuất" },
+            { "ID": "4120", "Name": "Bùi Văn Trung", "Position": "Sản xuất" },
+            { "ID": "4121", "Name": "Trần Văn Nghĩa", "Position": "Sản xuất" },
+            { "ID": "4123", "Name": "Đinh Thanh Long", "Position": "Sản xuất" },
+            { "ID": "4130", "Name": "Nguyễn Thiện Tâm", "Position": "Sản xuất" },
+            { "ID": "4132", "Name": "Nguyễn Công Nhật", "Position": "Sản xuất" },
+            { "ID": "4137", "Name": "Phạm Thế Sự", "Position": "Sản xuất" },
+            { "ID": "4138", "Name": "Đậu Đình Phương", "Position": "Sản xuất" }
+        ];
+        var LogInfo = getCookie('LogInfo');
+        if (LogInfo != undefined) {
+            setCookie('LogInfo', infor, 10);
+        }
         var timer1 = null, timer2 = null;
         function slot() {
             var slotOne = Math.floor(Math.random() * 10);
@@ -141,12 +263,35 @@
                     $('.row.result-wrap').removeClass('win');
                     $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's not a win.")
                 }
+                if (LogWin != undefined) {
+                    const index = LogInfo.indexOf(5);
+                    if (index > -1) {
+                        LogInfo.splice(index, 1);
+                    }
+                }
             }, 5000);
 
         }
         $('.btn-go').click(function () {
             slot();
         });
+        function setCookie(name, value, daysToLive) {
+            var cookie = name + "=" + encodeURIComponent(value);
+            if (typeof daysToLive === "number") {
+                cookie += "; max-age=" + (daysToLive * 24 * 60 * 60);
+                document.cookie = cookie;
+            }
+        }
+        function getCookie(name) {
+            var cookieArr = document.cookie.split(";");
+            for (var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
     </script>
 </body>
 </html>
