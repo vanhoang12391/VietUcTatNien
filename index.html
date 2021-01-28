@@ -227,6 +227,11 @@
             { "ID": "4137", "Name": "Phạm Thế Sự", "Position": "Sản xuất" },
             { "ID": "4138", "Name": "Đậu Đình Phương", "Position": "Sản xuất" }
         ];
+        var listID = '';
+        $(infor).each(function (index, item) {
+            listID += item.ID;
+        })
+
         var LogInfo = getCookie('LogInfo');
         if (LogInfo != undefined) {
             setCookie('LogInfo', infor, 10);
