@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>Việt Úc Phù Mỹ | Tất niên 2020</title>
-    <link rel="apple-touch-icon" href="https://pms.vietuc.com/images/logo.png">
     <meta name="viewport" content="initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="yes" />
@@ -91,7 +90,7 @@
     </style>
 </head>
 
-<body style="padding:0; margin: 0;background: url(https://pms.vietuc.com/images/banner.jpg); background-size: cover; font-family: arial;">
+<body style="padding:0; margin: 0;background: url(https://pms.vietuc.com/images/banner.jpg); background-size: cover;">
     <div class="container">
         <h1 style="text-align: center; width: 100%; text-transform:uppercase">Vòng quay may mắn</h1>
         <div class="row text-center">
@@ -229,12 +228,16 @@
             { "ID": "4138", "Name": "Đậu Đình Phương", "Position": "Sản xuất" }
         ];
         var listID = [];
-        $(infor).each(function (index, item) {
-            listID.push(item.ID);
-        })
         var LogInfo = getCookie('LogInfo');
-        if (LogInfo == undefined) {
+        if (LogInfo == undefined || LogInfo == null) {
+            $(infor).each(function (index, item) {
+                listID.push(item.ID);
+            })
             setCookie('LogInfo', JSON.stringify(listID), 10);
+        }
+        else {
+            var arrInfo = JSON.parse(LogInfo);
+            listID = arrInfo;
         }
         var timer1 = null, timer2 = null;
         function slot() {
