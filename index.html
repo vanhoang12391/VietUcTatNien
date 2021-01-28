@@ -230,10 +230,9 @@
         $(infor).each(function (index, item) {
             listID.push(item.ID);
         })
-
         var LogInfo = getCookie('LogInfo');
-        if (LogInfo != undefined) {
-            setCookie('LogInfo', infor, 10);
+        if (LogInfo == undefined) {
+            setCookie('LogInfo', JSON.stringify(listID), 10);
         }
         var timer1 = null, timer2 = null;
         function slot() {
@@ -253,11 +252,20 @@
                 $('.slot-4').html(i4);
             }, 300);
             timer2 = setTimeout(function () {
+                var cookieValue = getCookie('LogInfo');
+                var arrInfo = JSON.parse(cookieValue);
+                var randomWin = Math.floor(Math.random() * arrInfo.length);
+                var idWin = arrInfo[randomWin];
+
                 clearInterval(timer1);
-                $($('.slot')[0]).html(slotOne);
-                $($('.slot')[1]).html(slotTwo);
-                $($('.slot')[2]).html(slotThree);
-                $($('.slot')[3]).html(slotFour);
+                var num1 = idWin.substr(0, 1);
+                var num2 = idWin.substr(1, 1);
+                var num3 = idWin.substr(2, 1);
+                var num4 = idWin.substr(3, 1);
+                $($('.slot')[0]).html(num1);
+                $($('.slot')[1]).html(num2);
+                $($('.slot')[2]).html(num3);
+                $($('.slot')[3]).html(num4);
                 if (slotOne == slotTwo && slotOne == slotThree) {
                     $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's a win.");
                     $('.row.result-wrap').addClass('win');
@@ -267,12 +275,14 @@
                     $('.row.result-wrap').removeClass('win');
                     $('.result-wrap p').html(slotOne + " " + slotTwo + " " + slotThree + ":It's not a win.")
                 }
-                if (LogWin != undefined) {
-                    const index = LogInfo.indexOf(5);
-                    if (index > -1) {
-                        LogInfo.splice(index, 1);
-                    }
+                var EmployeeWin = infor.find(m => m.ID == idWin)
+                $('.result-wrap p').html(EmployeeWin.Name + " " + EmployeeWin.Position);
+                $('.row.result-wrap').addClass('win');
+                const indexWin = listID.indexOf(EmployeeWin.ID);
+                if (indexWin > -1) {
+                    listID.splice(4, 1)
                 }
+                setCookie('LogInfo', JSON.stringify(listID), 10);
             }, 5000);
 
         }
