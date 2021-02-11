@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Việt Úc Phù Mỹ | Tất niên 2020</title>
+    <title>Lì xì năm mới 2021</title>
     <meta name="viewport" content="initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="yes" />
@@ -42,7 +42,7 @@
         }
 
         .slot {
-            width: 25%;
+            width: calc(100% / 6);
             height: 120px;
             border: 2px solid #2a8099;
             margin: 15px 0;
@@ -78,18 +78,10 @@
             padding: 0 20px;
         }
 
-        .go-wrap, .result-wrap {
+        .go-wrap {
             margin: 30px 0;
             float: left;
         }
-
-            .result-wrap p, .result-wrap span {
-                text-align: center;
-                font-size: 35px;
-                text-transform: uppercase;
-                font-weight: bold;
-                display: block;
-            }
 
         .row.win {
             background: #b03434;
@@ -450,154 +442,21 @@
             <div class="slot slot-2">0</div>
             <div class="slot slot-3">0</div>
             <div class="slot slot-4">0</div>
+            <div class="slot slot-5">0</div>
+            <div class="slot slot-6">0</div>
         </div>
         <div class="go-wrap">
             <a href="javascript:" class="btn btn-default btn-block btn-go">Quay</a>
-        </div>
-        <div class="row result-wrap" style=" margin-top: 0;">
-            <p style=" margin-bottom: 10px;">Chúc mừng năm mới</p>
-            <span style="font-weight: normal; margin-bottom: 20px;"></span>
         </div>
         <div class="pyro hidden"><div class="before"></div><div class="after"></div></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        var infor = [
-            { "ID": "3036", "Name": "Nguyễn Văn Thảo", "Position": "Điều hành" },
-            { "ID": "3037", "Name": "Huỳnh Thị Bích Việt", "Position": "Nhân sự" },
-            { "ID": "3038", "Name": "Trần Thị Hậu", "Position": "Purchasing (Mua hàng)" },
-            { "ID": "3040", "Name": "Võ Văn Vỹ", "Position": "Hệ thống" },
-            { "ID": "4393", "Name": "Huỳnh Văn Hoàng", "Position": "Phát triển phần mềm" },
-            { "ID": "3041", "Name": "Huỳnh Thị Vân Kiều", "Position": "Lễ tân & Hành chính" },
-            { "ID": "3982", "Name": "Phan Thị Kim Nương", "Position": "QLDN - TTP" },
-            { "ID": "3045", "Name": "Nguyễn Hoàng Giang", "Position": "Bán hàng" },
-            { "ID": "3178", "Name": "Nguyễn Nhật Tân", "Position": "Kế toán tài chính" },
-            { "ID": "3043", "Name": "Nguyễn Thị Kim Hương", "Position": "Kế toán tài chính" },
-            { "ID": "3047", "Name": "Ngô Thanh Lợi", "Position": "Kế toán tài chính" },
-            { "ID": "4071", "Name": "Ngô Thanh Hải", "Position": "Kế toán tài chính" },
-            { "ID": "3981", "Name": "Lê Thị Thanh Hoa", "Position": "Kế toán tài chính" },
-            { "ID": "4072", "Name": "Võ Tiến Thông", "Position": "Kế toán tài chính" },
-            { "ID": "4073", "Name": "Nguyễn Hữu Triều", "Position": "Kế toán tài chính" },
-            { "ID": "3714", "Name": "Nguyễn Thanh Diệt", "Position": "Tài xế" },
-            { "ID": "3080", "Name": "Trần Văn Sơn", "Position": "Bảo vệ" },
-            { "ID": "3025", "Name": "Trương Thanh Hải", "Position": "Bảo vệ" },
-            { "ID": "3032", "Name": "Phạm Tân", "Position": "Bảo vệ" },
-            { "ID": "3033", "Name": "Đỗ Văn Tùng", "Position": "Bảo vệ" },
-            { "ID": "3034", "Name": "Nguyễn Thanh Trực", "Position": "Bảo vệ" },
-            { "ID": "3035", "Name": "Dương Xuân Duy", "Position": "Bảo vệ" },
-            { "ID": "3026", "Name": "Nguyễn Lành", "Position": "Bảo vệ" },
-            { "ID": "3027", "Name": "Trần Trung Hòa", "Position": "Bảo vệ" },
-            { "ID": "3545", "Name": "Trần Quang Khoa", "Position": "Bảo vệ" },
-            { "ID": "3712", "Name": "Nguyễn Văn Khanh", "Position": "Bảo vệ" },
-            { "ID": "3713", "Name": "Thái Bình Dưỡng", "Position": "Bảo vệ" },
-            { "ID": "3028", "Name": "Phạm Thị Loan", "Position": "Cấp Dưỡng" },
-            { "ID": "3024", "Name": "Trần Thị Thúy Hằng", "Position": "Cấp Dưỡng" },
-            { "ID": "3029", "Name": "Nguyễn Thị Thảo Trang", "Position": "Cấp Dưỡng" },
-            { "ID": "4074", "Name": "Phan Thị Hân", "Position": "Cấp Dưỡng" },
-            { "ID": "3030", "Name": "Trần Thị Dung", "Position": "Tạp vụ" },
-            { "ID": "4354", "Name": "Trần Thị Ngọc Kiều", "Position": "Tạp vụ" },
-            { "ID": "3049", "Name": "Nguyễn Hữu Học", "Position": "Giám sát xây dựng" },
-            { "ID": "3051", "Name": "Lương Chí Cường", "Position": "Giám sát xây dựng" },
-            { "ID": "3031", "Name": "Lê Quang Thế", "Position": "Bảo trì" },
-            { "ID": "3052", "Name": "Trần Đình Sơn", "Position": "Cơ điện nước" },
-            { "ID": "3053", "Name": "Đặng Thành Thắng", "Position": "Cơ điện nước" },
-            { "ID": "3054", "Name": "Trương Công Minh", "Position": "Cơ điện nước" },
-            { "ID": "3055", "Name": "Trần Thanh Phụng", "Position": "Cơ điện nước" },
-            { "ID": "3056", "Name": "Đặng Văn Chu", "Position": "Cơ điện nước" },
-            { "ID": "3057", "Name": "Võ Đức Toàn", "Position": "Cơ điện nước" },
-            { "ID": "3547", "Name": "Lê Thị Quyên", "Position": "Quản lý chất lượng" },
-            { "ID": "3548", "Name": "Liễu Như Ý", "Position": "Quản lý chất lượng" },
-            { "ID": "4075", "Name": "Đặng Thị Ly", "Position": "Quản lý chất lượng" },
-            { "ID": "4076", "Name": "Lê Văn Tiên", "Position": "Quản lý chất lượng" },
-            { "ID": "4077", "Name": "Huỳnh Thị Mỹ Huyền", "Position": "Quản lý chất lượng" },
-            { "ID": "4339", "Name": "Võ Thị Nhớ", "Position": "Quản lý chất lượng" },
-            { "ID": "4340", "Name": "Nguyễn Thị Hải Yến", "Position": "Quản lý chất lượng" },
-            { "ID": "3563", "Name": "Hoàng Đình Hiếu", "Position": "Bảo trì thiết bị công nghệ" },
-            { "ID": "3072", "Name": "Nguyễn Anh Tường", "Position": "Sản xuất" },
-            { "ID": "3710", "Name": "Ngô Đình Quốc Dũng", "Position": "Sản xuất" },
-            { "ID": "4113", "Name": "Bùi Văn Đồng Tâm", "Position": "Sản xuất" },
-            { "ID": "4116", "Name": "Nguyễn Văn Trường", "Position": "Sản xuất" },
-            { "ID": "4125", "Name": "Hà Văn Trảy", "Position": "Sản xuất" },
-            { "ID": "3065", "Name": "Nguyễn Văn Phú", "Position": "Nghiên cứu phát triển" },
-            { "ID": "3572", "Name": "Trần Văn Tuấn", "Position": "Nghiên cứu phát triển" },
-            { "ID": "4095", "Name": "Nguyễn Hữu Thanh", "Position": "Nghiên cứu phát triển" },
-            { "ID": "4098", "Name": "Nguyễn Đình Thông", "Position": "Nghiên cứu phát triển" },
-            { "ID": "4131", "Name": "Nguyễn Văn Cường", "Position": "Sản xuất" },
-            { "ID": "2742", "Name": "Bùi Nhật Quang", "Position": "Sản xuất" },
-            { "ID": "3062", "Name": "Nguyễn Văn Trạng", "Position": "Sản xuất" },
-            { "ID": "3980", "Name": "Nguyễn Hoàng Xuân", "Position": "Sản xuất" },
-            { "ID": "3066", "Name": "Nguyễn Như Hổ", "Position": "Sản xuất" },
-            { "ID": "3060", "Name": "Nguyễn Hiên Thung", "Position": "Sản xuất" },
-            { "ID": "4103", "Name": "Phạm Văn Ni", "Position": "Sản xuất" },
-            { "ID": "3067", "Name": "Quảng Công Thạch", "Position": "Sản xuất" },
-            { "ID": "3068", "Name": "Ngô Vũ Luân", "Position": "Sản xuất" },
-            { "ID": "3069", "Name": "Dương Ngọc Toàn", "Position": "Sản xuất" },
-            { "ID": "3070", "Name": "Nguyễn Quốc Hưng", "Position": "Sản xuất" },
-            { "ID": "3071", "Name": "Trần Quang Nguyên", "Position": "Sản xuất" },
-            { "ID": "3073", "Name": "Thái Quang Đạt", "Position": "Sản xuất" },
-            { "ID": "3074", "Name": "Nhữ Văn Đạt", "Position": "Sản xuất" },
-            { "ID": "3075", "Name": "Phạm Minh Tuấn", "Position": "Sản xuất" },
-            { "ID": "3077", "Name": "Bùi Ân Điền", "Position": "Sản xuất" },
-            { "ID": "3551", "Name": "Bùi Thi", "Position": "Sản xuất" },
-            { "ID": "3558", "Name": "Nguyễn Thanh Tân", "Position": "Sản xuất" },
-            { "ID": "3559", "Name": "Phạm Văn Tứ", "Position": "Sản xuất" },
-            { "ID": "3560", "Name": "Đỗ Văn Láng", "Position": "Sản xuất" },
-            { "ID": "3561", "Name": "Trần Anh Tuấn", "Position": "Sản xuất" },
-            { "ID": "3562", "Name": "Lê Bảo Huy", "Position": "Sản xuất" },
-            { "ID": "3564", "Name": "Lê Tuấn Nam", "Position": "Sản xuất" },
-            { "ID": "3569", "Name": "Nhữ Thanh Bình", "Position": "Sản xuất" },
-            { "ID": "3570", "Name": "Đặng Mậu Đang", "Position": "Sản xuất" },
-            { "ID": "3571", "Name": "Ngô Văn Vương", "Position": "Sản xuất" },
-            { "ID": "3573", "Name": "Trương Hoàng Đệ", "Position": "Sản xuất" },
-            { "ID": "3574", "Name": "Tô Thanh Hoài", "Position": "Sản xuất" },
-            { "ID": "3576", "Name": "Nguyễn Chiến Hiệu", "Position": "Sản xuất" },
-            { "ID": "3578", "Name": "Lê Đức Hiệp", "Position": "Sản xuất" },
-            { "ID": "3666", "Name": "Phùng Minh Dự", "Position": "Sản xuất" },
-            { "ID": "3667", "Name": "Nguyễn Minh Tấn", "Position": "Sản xuất" },
-            { "ID": "3669", "Name": "Nguyễn Văn Dũng", "Position": "Sản xuất" },
-            { "ID": "3670", "Name": "Nguyễn Văn Trí", "Position": "Sản xuất" },
-            { "ID": "3703", "Name": "Bùi Sáng", "Position": "Sản xuất" },
-            { "ID": "4079", "Name": "Phạm Chí Linh", "Position": "Sản xuất" },
-            { "ID": "4083", "Name": "Văn Bá Quí", "Position": "Sản xuất" },
-            { "ID": "4087", "Name": "Kiều Quang Đại", "Position": "Sản xuất" },
-            { "ID": "4088", "Name": "Lê Văn Dược", "Position": "Sản xuất" },
-            { "ID": "4091", "Name": "Trần Ngọc Tài", "Position": "Sản xuất" },
-            { "ID": "4094", "Name": "Phùng Đông Sang", "Position": "Sản xuất" },
-            { "ID": "4097", "Name": "Hồ Xuân Tùng", "Position": "Sản xuất" },
-            { "ID": "4099", "Name": "Nguyễn Ngọc Ly", "Position": "Sản xuất" },
-            { "ID": "4100", "Name": "Nguyễn Thái Phương", "Position": "Sản xuất" },
-            { "ID": "4101", "Name": "Nguyễn Anh Pháp", "Position": "Sản xuất" },
-            { "ID": "4110", "Name": "Lê Công Dư", "Position": "Sản xuất" },
-            { "ID": "4114", "Name": "Trần Văn Thanh", "Position": "Sản xuất" },
-            { "ID": "4115", "Name": "Nguyễn Duy", "Position": "Sản xuất" },
-            { "ID": "4117", "Name": "Nguyễn Thanh Tuấn", "Position": "Sản xuất" },
-            { "ID": "4118", "Name": "Phạm Văn Thoàng", "Position": "Sản xuất" },
-            { "ID": "4120", "Name": "Bùi Văn Trung", "Position": "Sản xuất" },
-            { "ID": "4121", "Name": "Trần Văn Nghĩa", "Position": "Sản xuất" },
-            { "ID": "4123", "Name": "Đinh Thanh Long", "Position": "Sản xuất" },
-            { "ID": "4130", "Name": "Nguyễn Thiện Tâm", "Position": "Sản xuất" },
-            { "ID": "4132", "Name": "Nguyễn Công Nhật", "Position": "Sản xuất" },
-            { "ID": "4137", "Name": "Phạm Thế Sự", "Position": "Sản xuất" },
-            { "ID": "4138", "Name": "Đậu Đình Phương", "Position": "Sản xuất" }
-        ];
-        var listID = [];
-        var LogInfo = getCookie('LogInfo');
-        if (LogInfo == undefined || LogInfo == null) {
-            $(infor).each(function (index, item) {
-                listID.push(item.ID);
-            })
-            setCookie('LogInfo', JSON.stringify(listID), 10);
-        }
-        else {
-            var arrInfo = JSON.parse(LogInfo);
-            listID = arrInfo;
-        }
         var timer1 = null, timer2 = null;
         function slot() {
             if (!$('.pyro').hasClass('hidden')) {
                 $('.pyro').addClass('hidden');
             }
-            $('.row.result-wrap').removeClass('win');
             clearInterval(timer1); clearTimeout(timer2);
             var audio = new Audio('http://vietucphumy.tk/mix-slot.mp3');
             audio.play();
@@ -606,59 +465,87 @@
                 var i2 = Math.floor(Math.random() * 10);
                 var i3 = Math.floor(Math.random() * 10);
                 var i4 = Math.floor(Math.random() * 10);
+                var i5 = Math.floor(Math.random() * 10);
+                var i6 = Math.floor(Math.random() * 10);
                 $('.slot-1').html(i1);
                 $('.slot-2').html(i2);
                 $('.slot-3').html(i3);
                 $('.slot-4').html(i4);
+                $('.slot-5').html(i5);
+                $('.slot-6').html(i6);
             }, 100);
             timer2 = setTimeout(function () {
-                var cookieValue = getCookie('LogInfo');
-                var arrInfo = JSON.parse(cookieValue);
-                var randomWin = Math.floor(Math.random() * arrInfo.length);
+                var randomWin = Math.floor(Math.random() * 7);
                 var idWin = arrInfo[randomWin];
-
+                if (idWin <= 1) {
+                    num1 = 0;
+                    num2 = 0;
+                    num3 = 1;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
+                else if (idWin == 2) {
+                    num1 = 0;
+                    num2 = 0;
+                    num3 = 2;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
+                else if (idWin == 3) {
+                    num1 = 0;
+                    num2 = 0;
+                    num3 = 5;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
+                else if (idWin == 4) {
+                    num1 = 0;
+                    num2 = 1;
+                    num3 = 0;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
+                else if (idWin == 5) {
+                    num1 = 0;
+                    num2 = 2;
+                    num3 = 0;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
+                else if (idWin == 6) {
+                    num1 = 0;
+                    num2 = 5;
+                    num3 = 0;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
+                else if (idWin == 7) {
+                    num1 = 1;
+                    num2 = 0;
+                    num3 = 0;
+                    num4 = 0;
+                    num5 = 0;
+                    num6 = 0;
+                }
                 clearInterval(timer1);
-                var num1 = idWin.substr(0, 1);
-                var num2 = idWin.substr(1, 1);
-                var num3 = idWin.substr(2, 1);
-                var num4 = idWin.substr(3, 1);
                 $($('.slot')[0]).html(num1);
                 $($('.slot')[1]).html(num2);
                 $($('.slot')[2]).html(num3);
                 $($('.slot')[3]).html(num4);
-                var EmployeeWin = infor.find(m => m.ID == idWin)
-                $('.result-wrap p').html(EmployeeWin.Name);
-                $('.result-wrap span').html(EmployeeWin.Position);
-                $('.row.result-wrap').addClass('win');
-                $('.pyro').removeClass('hidden');
-                const indexWin = listID.indexOf(EmployeeWin.ID);
-                if (indexWin > -1) {
-                    listID.splice(indexWin, 1)
-                }
-                setCookie('LogInfo', JSON.stringify(listID), 10);
+                $($('.slot')[4]).html(num5);
+                $($('.slot')[5]).html(num6);
             }, 10000);
 
         }
         $('.btn-go').click(function () {
             slot();
         });
-        function setCookie(name, value, daysToLive) {
-            var cookie = name + "=" + encodeURIComponent(value);
-            if (typeof daysToLive === "number") {
-                cookie += "; max-age=" + (daysToLive * 24 * 60 * 60);
-                document.cookie = cookie;
-            }
-        }
-        function getCookie(name) {
-            var cookieArr = document.cookie.split(";");
-            for (var i = 0; i < cookieArr.length; i++) {
-                var cookiePair = cookieArr[i].split("=");
-                if (name == cookiePair[0].trim()) {
-                    return decodeURIComponent(cookiePair[1]);
-                }
-            }
-            return null;
-        }
     </script>
 </body>
 </html>
